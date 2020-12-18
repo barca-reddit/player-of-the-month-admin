@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- await include('partials/head', { title: 'Players - List - Player of the month admin' }); %>
+    <script src="/assets/js/ejs.js" defer></script>
+    <script src="/assets/js/core.js" defer></script>
+    <script src="/assets/js/players.js" defer></script>
+</head>
+
+<body>
+    <%- await include('partials/nav', { menu_active: 'players' }); %>
+    <div class="section py-5">
+        <div class="container">
+            <%- await include('partials/breadcrumbs', { breadcrumbs: [{ name: 'Players', path: '/players'}]}); %>
+            <% if (players.length > 0) { %>
+            <div class="columns is-mobile is-multiline">
+                <% players.forEach(player => { %>
+                <div class="column is-6-mobile is-4-tablet is-one-fifth-desktop" player-id="<%- player._id; %>">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                <%- `#${player.number} ${player.name}` %>
+                            </p>
+                        </header>
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="<%- player.photo %>">
+                            </figure>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item is-size-7 player-edit">Edit</a>
+                            <a href="#" class="card-footer-item is-size-7">Delete</a>
+                        </footer>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="is-flex-direction-column is-align-items-center toast" style="display: none; position: fixed; bottom: 3rem; width: 100%">
+    </div>
+    <div class="is-flex-grow-1"></div>
+    <div class="modal"></div>
+    <%- await include('partials/footer'); %>
+</body>
+
+</html>

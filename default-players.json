@@ -1,0 +1,285 @@
+[
+    {
+        "number": 1,
+        "name": "Ter Stegen",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250007631.jpg",
+        "tags": [
+            "Ter Stegen",
+            "Marc-Andre ter Stegen",
+            "Marc Andre ter Stegen",
+            "TerStegen",
+            "MATS"
+        ]
+    },
+    {
+        "number": 2,
+        "name": "Dest",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250112998.jpg",
+        "tags": [
+            "Dest",
+            "Sergino Dest",
+            "Serginho Dest"
+        ]
+    },
+    {
+        "number": 3,
+        "name": "Piqué",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/93148.jpg",
+        "tags": [
+            "Pique",
+            "Gerard Pique",
+            "Gerard"
+        ]
+    },
+    {
+        "number": 4,
+        "name": "Araújo",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250134170.jpg",
+        "tags": [
+            "Araujo",
+            "Ronald Araujo",
+            "Ronald"
+        ]
+    },
+    {
+        "number": 5,
+        "name": "Busquets",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250002704.jpg",
+        "tags": [
+            "Busquets",
+            "Sergio Busquets",
+            "Sergi Busquets",
+            "Busi"
+        ]
+    },
+    {
+        "number": 6,
+        "name": "Aleñá",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250065302.jpg",
+        "tags": [
+            "Alena",
+            "Carles Alena"
+        ]
+    },
+    {
+        "number": 7,
+        "name": "Griezmann",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250019498.jpg",
+        "tags": [
+            "Griezmann",
+            "Antoine Griezmann"
+        ]
+    },
+    {
+        "number": 8,
+        "name": "Pjanić",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/104071.jpg",
+        "tags": [
+            "Pjanic",
+            "Miralem Pjanic",
+            "Miralem"
+        ]
+    },
+    {
+        "number": 9,
+        "name": "Braithwaite",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250013677.jpg",
+        "tags": [
+            "Braithwaite",
+            "Martin Braithwaite"
+        ]
+    },
+    {
+        "number": 10,
+        "name": "Messi",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/95803.jpg",
+        "tags": [
+            "Messi",
+            "Leo Messi",
+            "Lionel Messi",
+            "Leo"
+        ]
+    },
+    {
+        "number": 11,
+        "name": "Dembélé",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250066886.jpg",
+        "tags": [
+            "Dembele",
+            "Ousmane Dembele",
+            "Dembouz"
+        ]
+    },
+    {
+        "number": 12,
+        "name": "Puig",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250087540.jpg",
+        "tags": [
+            "Puig",
+            "Riqui",
+            "Riqui Puig"
+        ]
+    },
+    {
+        "number": 13,
+        "name": "Neto",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250061507.jpg",
+        "tags": [
+            "Neto"
+        ]
+    },
+    {
+        "number": 14,
+        "name": "Coutinho",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250020682.jpg",
+        "tags": [
+            "Coutinho",
+            "Philippe Coutinho",
+            "Couts"
+        ]
+    },
+    {
+        "number": 15,
+        "name": "Lenglet",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250042779.jpg",
+        "tags": [
+            "Lenglet",
+            "Clement Lenglet"
+        ]
+    },
+    {
+        "number": 16,
+        "name": "Pedri",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250143693.jpg",
+        "tags": [
+            "Pedri"
+        ]
+    },
+    {
+        "number": 17,
+        "name": "Trincão",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250112122.jpg",
+        "tags": [
+            "Trincao"
+        ]
+    },
+    {
+        "number": 18,
+        "name": "Alba",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250000036.jpg",
+        "tags": [
+            "Alba",
+            "Jordi Alba",
+            "Jordi"
+        ]
+    },
+    {
+        "number": 19,
+        "name": "Fernandes",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250144212.jpg",
+        "tags": [
+            "Fernandes",
+            "Matheus Fernandes",
+            "Matheus"
+        ]
+    },
+    {
+        "number": 20,
+        "name": "Sergi Roberto",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250006092.jpg",
+        "tags": [
+            "Sergi Roberto",
+            "Sergi",
+            "Roberto"
+        ]
+    },
+    {
+        "number": 21,
+        "name": "De Jong",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250084709.jpg",
+        "tags": [
+            "De Jong",
+            "Frenkie De Jong",
+            "Frenkie"
+        ]
+    },
+    {
+        "number": 22,
+        "name": "Fati",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250117471.jpg",
+        "tags": [
+            "Fati",
+            "Ansu Fati",
+            "Ansu"
+        ]
+    },
+    {
+        "number": 23,
+        "name": "Umtiti",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250014003.jpg",
+        "tags": [
+            "Umtiti",
+            "Samuel Umtiti"
+        ]
+    },
+    {
+        "number": 24,
+        "name": "Firpo",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250122839.jpg",
+        "tags": [
+            "Firpo",
+            "Junior Firpo",
+            "Junior"
+        ]
+    },
+    {
+        "number": 26,
+        "name": "Iñaki Peña",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250081721.jpg",
+        "tags": [
+            "Inaki Pena",
+            "Pena",
+            "Inaki"
+        ]
+    },
+    {
+        "number": 27,
+        "name": "Ilaix Moriba",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250123954.jpg",
+        "tags": [
+            "Ilaix Moriba",
+            "Ilaix",
+            "Moriba"
+        ]
+    },
+    {
+        "number": 28,
+        "name": "Mingueza",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250087538.jpg",
+        "tags": [
+            "Mingueza",
+            "Oscar Mingueza",
+            "Oscar"
+        ]
+    },
+    {
+        "number": 29,
+        "name": "Konrad",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250117470.jpg",
+        "tags": [
+            "Konrad",
+            "Konrad de la Fuente",
+            "De la Fuente"
+        ]
+    },
+    {
+        "number": 36,
+        "name": "Arnau Tenas",
+        "photo": "https://img.uefa.com/imgml/TP/players/1/2021/324x324/250106979.jpg",
+        "tags": [
+            "Arnau Tenas",
+            "Arnau",
+            "Tenas"
+        ]
+    }
+]

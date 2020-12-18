@@ -1,0 +1,30 @@
+{
+  "name": "barca_potm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node_modules/.bin/sass --watch assets/css/bulma.scss assets/css/bulma.css --no-source-map & NODE_ENV=development nodemon index.js"
+  },
+  "keywords": [
+    "atlas",
+    "mongoose",
+    "bulma"
+  ],
+  "author": "decho",
+  "license": "ISC",
+  "dependencies": {
+    "abort-controller": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "mongoose": "^5.11.0",
+    "mongoose-lean-virtuals": "^0.7.5",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.1",
+    "nodemon": "^2.0.6",
+    "sass": "^1.30.0"
+  }
+}

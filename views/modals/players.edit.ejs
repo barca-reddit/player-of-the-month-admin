@@ -1,0 +1,71 @@
+<div class="modal-background"></div>
+<div class="modal-card">
+    <header class="modal-card-head">
+        <p class="modal-card-title is-size-7">Update <span
+                  class="has-text-link has-text-underline has-text-weight-bold"><%- player.name; %></span>.</label>
+        </p>
+        <button class="delete modal-delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+        <div class="columns is-multiline strawpoll-controls">
+            <div class="column is-4">
+                <div class="field">
+                    <label class="label is-small">Player id:</label>
+                    <div class="control has-tooltip" tooltip-text="Database id">
+                        <input class="input is-small" value="<%- player._id; %>" type="text" mongo-key="_id" title required disabled />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="field">
+                    <label class="label is-small">Player name:</label>
+                    <div class="control has-tooltip" tooltip-text="Alphanumeric only">
+                        <input class="input is-small" value="<%- player.name; %>" type="text" placeholder="Player Name..."
+                               pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="name" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="field">
+                    <label class="label is-small">Number:</label>
+                    <div class="control has-tooltip" tooltip-text="Digits only">
+                        <input class="input is-small" value="<%- player.number; %>" type="text" placeholder="1 or 2 or 3..."
+                               pattern="^[\d]{1,2}$" mongo-key="number" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-12">
+                <div class="field">
+                    <label class="label is-small">Photo:</label>
+                    <div class="control has-tooltip" tooltip-text="URL address">
+                        <input class="input is-small" value="<%- player.photo; %>" type="text" placeholder="https://..." mongo-key="photo"
+                               title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-12">
+                <label class="label is-small">Tags (aliases):</label>
+                <div class="field">
+                    <div class="control">
+                        <div class="tags">
+                            <% player.tags.forEach(tag => { %>
+                            <span class="tag tag-editable is-info" spellcheck="false">
+                                <span class="" contenteditable="true"><%- tag; %></span>
+                                <button class="delete delete-tag is-small ml-4"></button>
+                            </span>
+                            <% }); %>
+                            <span class="tag tag-add">
+                                <span>Add tag</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="modal-card-foot">
+        <button class="button is-small is-success modal-save">Save Changes</button>
+        <button class="button is-small modal-cancel">Cancel</button>
+    </footer>
+</div>

@@ -1,0 +1,90 @@
+<div class="modal-background"></div>
+<div class="modal-card">
+    <header class="modal-card-head">
+        <p class="modal-card-title is-size-7">Update <span
+                  class="has-text-link has-text-underline has-text-weight-bold"><%- `${match.home_team_name} vs ${match.away_team_name}`; %></span>.</label>
+        </p>
+        <button class="delete modal-delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+        <div class="columns is-multiline strawpoll-controls">
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Strawpoll id:</label>
+                    <div class="control has-tooltip" tooltip-text="Digits only">
+                        <input class="input is-small form-strawpoll-id" value="<%- match.id %>" type="text" placeholder="123456789..."
+                               pattern="^[\d]+$" mongo-key="id" name="id" title required disabled />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Reddit thread id:</label>
+                    <div class="control has-tooltip" tooltip-text="Alphanumeric only">
+                        <input class="input is-small form-reddit-id" value="<%- match.thread %>" type="text" placeholder="a1b2x3y4..."
+                               pattern="^[\w\d]+$" mongo-key="thread" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Competition:</label>
+                    <div class="control has-tooltip" tooltip-text="Enter the competition's name">
+                        <input class="input is-small form-competition" value="<%- match.competition %>" type="text"
+                               placeholder="League name" pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="competition" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Date:</label>
+                    <div class="control has-tooltip" tooltip-text="Date in CE(S)T time zone">
+                        <% const date = new Date(match.timestamp); %>
+                        <input value="<%- `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1).toString().length === 1 ? '0' + (date.getUTCMonth() + 1) : date.getUTCMonth() + 1}-${date.getUTCDate().toString().length === 1 ? '0' + date.getUTCDate() : date.getUTCDate()}`; %>"
+                               type="date" pattern="\d{4}-\d{2}-\d{2}" mongo-key="timestamp" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Home team name:</label>
+                    <div class="control">
+                        <input class="input is-small form-home-team-name" value="<%- match.home_team_name %>" type="text"
+                               placeholder="Team A" pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="home_team_name" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Home team score:</label>
+                    <div class="control">
+                        <input class="input is-small form-home-team-score" value="<%- match.home_team_score %>" type="text" placeholder="0"
+                               pattern="^[\d]{1,2}$" mongo-key="home_team_score" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Away team name:</label>
+                    <div class="control">
+                        <input class="input is-small form-away-team-name" value="<%- match.away_team_name %>" type="text"
+                               placeholder="Team B" pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="away_team_name" title required />
+                    </div>
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="field">
+                    <label class="label is-small">Away team score:</label>
+                    <div class="control">
+                        <input class="input is-small form-away-team-score" value="<%- match.away_team_score %>" type="text" placeholder="0"
+                               pattern="^[\d]{1,2}$" mongo-key="away_team_score" title required />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="modal-card-foot">
+        <button class="button is-small is-success modal-save">Save Changes</button>
+        <button class="button is-small modal-cancel">Cancel</button>
+    </footer>
+</div>

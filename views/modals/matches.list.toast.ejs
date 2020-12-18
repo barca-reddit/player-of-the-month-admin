@@ -1,0 +1,12 @@
+<article class="message is-danger" style="min-width: 60%; max-width: 90%;">
+    <div class="message-body">
+        <span>Are you sure you want to remove
+            <span class="has-text-underline"><%- `${match.home_team_name} vs ${match.away_team_name}`; %></span>? All player ratings related
+            to this match will also be deleted.
+        </span>
+        <div class="buttons are-small mt-4">
+            <button class="button is-danger toast-delete">Delete</button>
+            <button class="button is-text toast-cancel">Cancel</button>
+        </div>
+    </div>
+</article>

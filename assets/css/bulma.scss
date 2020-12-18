@@ -1,0 +1,218 @@
+@charset "utf-8";
+@import '../../node_modules/bulma/bulma.sass';
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
+// Update Bulma's global variables
+$family-sans-serif: "Ubuntu";
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.table tbody tr,
+.table tbody td,
+.table tbody img {
+    vertical-align: middle;
+}
+
+.table tbody tr.is-rating td {
+    padding: 0.25em 0.75em;
+}
+
+.table tr.is-match,
+.table tr.is-rating {
+    white-space: nowrap;
+}
+
+.has-text-underline {
+    text-decoration: underline dotted;
+}
+
+.checkbox-custom {
+    all: revert;
+}
+
+.checkbox-custom input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-custom span {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.checkbox-custom input[type=checkbox]+span:before {
+    display: inline-block;
+    content: "";
+    margin: 0 7px 0 0;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    min-height: 15px;
+    min-width: 15px;
+}
+
+.checkbox-custom input[type=checkbox]:checked+span:before {
+    display: inline-block;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-image: url('/assets/img/check-solid.svg');
+    background-size: 11px;
+    background-position: 2px 2px;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.icon-custom {
+    cursor: pointer;
+}
+
+.icon-custom:hover,
+.icon-custom:active {
+    opacity: .5;
+}
+
+.control input[type=date] {
+    all: unset;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    box-sizing: inherit;
+    border: 1px solid transparent;
+    display: inline-flex;
+    height: 2.5em;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: calc(0.75em - 1px);
+    padding-right: calc(0.75em - 1px);
+    padding-top: calc(0.5em - 1px);
+    background-color: white;
+    border-color: #dbdbdb;
+    color: #363636;
+    box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
+    border-radius: 2px;
+    font-size: 0.75rem;
+}
+
+.control input[type=date]:disabled {
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+    box-shadow: none;
+    color: #d2d2d2;
+    cursor: not-allowed;
+}
+
+.has-tooltip {
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.has-tooltip:before,
+.has-tooltip:after {
+    display: inline-block;
+    position: absolute;
+    visibility: hidden;
+    margin: -8px auto auto auto;
+    z-index: 999;
+    top: 0;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    font-size: 0.75rem;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    box-sizing: border-box;
+    color: #fff;
+    transition: visibility 0s 0s linear;
+}
+
+.has-tooltip:before {
+    content: attr(tooltip-text);
+    transform: translate(-50%, -100%);
+    background: $grey-darker;
+    border-radius: 3px;
+    white-space: pre;
+    padding: 0.25rem 0.5rem;
+}
+
+.has-tooltip:after {
+    content: '';
+    margin: -8px -5px auto -5px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: $grey-darker transparent transparent transparent;
+}
+
+.has-tooltip:hover:before,
+.has-tooltip:hover:after {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s .5s linear;
+}
+
+.tag.tag-add {
+    cursor: pointer;
+}
+
+.tag.tag-editable {
+    cursor: pointer;
+}
+
+.tag.tag-add span:hover,
+.tag.tag-editable span:hover,
+.tag.tag-editable span:focus {
+    text-decoration: underline;
+}
+
+.tags-invalid {
+    box-shadow: inset 0 0 0 1px $danger;
+    border-radius: 2px;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes toast {
+    0% {
+        transform: translateY(calc(100% + 3rem));
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .8;
+        background-color: $danger;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

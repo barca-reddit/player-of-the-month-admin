@@ -1,0 +1,10 @@
+<% ratings.forEach((rating, index) => { %>
+<tr class="is-size-7 has-background-info-light is-rating" match-id="<%- ratings[0].match_id; %>">
+    <td class="has-text-centered"><%- index + 1; %></td>
+    <td><%- rating.player.name; %></td>
+    <td><%- `${rating.percent.$numberDecimal}%`; %></td>
+    <td><%- `${rating.votes} votes`; %></td>
+    <td><%- `${rating.points} pts`; %></td>
+    <td colspan="5"></td>
+</tr>
+<% }); %>

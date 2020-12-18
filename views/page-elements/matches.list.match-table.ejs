@@ -1,0 +1,63 @@
+<table class="table is-fullwidth is-hoverable has-text-centered">
+    <thead class="is-size-7">
+        <tr>
+            <th class="has-text-left" colspan="10">Matches</th>
+        </tr>
+        <tr>
+            <th style="width: 5%;">&nbsp;</th>
+            <th style="width: 10%;">ID</th>
+            <th style="width: 15%;">Date</th>
+            <th style="width: 15%;">Home Team</th>
+            <th style="width: 5%;">Score</th>
+            <th style="width: 15%;">Away Team</th>
+            <th style="width: 5%;">Outcome</th>
+            <th style="width: 10%;">Competition</th>
+            <th style="width: 10%;">Thread</th>
+            <th style="width: 10%;">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (matches.length === 0) { %>
+        <tr class="is-size-7">
+            <td colspan="10">No results to display.</td>
+        </tr>
+        <% } else { %>
+        <% matches.forEach(match=> { %>
+        <tr class="is-size-7 is-match" match-id="<%- match.id %>">
+            <td>
+                <img class="match-ratings icon-custom" src="/assets/img/angle-down.svg"
+                     style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
+            </td>
+            <td>
+                <a href="https://www.strawpoll.me/<%- match.id %>/r" target="_blank"><span><%- match.id %></span></a>
+            </td>
+            <td>
+                <span><%- new Date(match.timestamp).toLocaleString('en-GB', { timeZone: 'Europe/Madrid', year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }); %></span>
+            </td>
+            <td>
+                <span><%- match.home_team_name %></span>
+            </td>
+            <td>
+                <span><%- `${match.home_team_score}:${match.away_team_score}` %></span>
+            </td>
+            <td>
+                <span><%- match.away_team_name %></span>
+            </td>
+            <td>
+                <span><%- match.outcome %></span>
+            </td>
+            <td><span><%- match.competition %></span>
+            </td>
+            <td>
+                <span><a href="https://redd.it/<%- match.thread %>" target="_blank"><%- match.thread %></a></span>
+            </td>
+            <td>
+                <div class="is-flex is-justify-content-center">
+                    <img class="mr-1 match-edit icon-custom" src="/assets/img/edit.svg" style="width: 20px; height: 20px;">
+                    <a class="delete has-background-danger match-delete icon-custom"></a>
+                </div>
+            </td>
+        </tr>
+        <% })}; %>
+    </tbody>
+</table>

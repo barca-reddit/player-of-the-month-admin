@@ -1,0 +1,11 @@
+<nav class="breadcrumb is-small" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <% breadcrumbs.forEach((breadcrumb, index, array) => { %>
+        <% if (array.length -1 === index)  { %>
+        <li><a class="is-active" href="<%- breadcrumb.path %>"><%- breadcrumb.name %></a></li>
+        <% } else { %>
+        <li><a href="<%- breadcrumb.path %>"><%- breadcrumb.name %></a></li>
+        <% }}); %>
+    </ul>
+</nav>

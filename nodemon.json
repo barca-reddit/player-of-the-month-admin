@@ -1,0 +1,8 @@
+{
+    "verbose": true,
+    "ext": "js,json,ejs",
+    "ignore": [
+        ".git",
+        "node_modules/**/node_modules"
+    ]
+}

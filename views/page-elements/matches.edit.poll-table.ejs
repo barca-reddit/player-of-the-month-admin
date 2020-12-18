@@ -1,0 +1,59 @@
+<div class="column is-6">
+    <table class="table is-fullwidth is-hoverable has-text-centered">
+        <thead class="is-size-7">
+            <tr>
+                <th class="has-text-left" colspan="2">
+                    Strawpoll data:<%- poll.some(entry => !entry.in_db)
+                    ? `<span class="has-text-danger"> (missing entries in database)</span>`
+                    : `` %>
+                </th>
+                <th class="has-text-right" colspan="2"><%- question; %></th>
+            </tr>
+            <tr>
+                <th style="width: 25%;">Name</th>
+                <th style="width: 25%;">Votes</th>
+                <th style="width: 25%;">%</th>
+                <th style="width: 25%;">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% poll.forEach(entry => { %>
+            <tr class=" is-size-7">
+                <td>
+                    <%- entry.in_db
+                    ? `<span>${entry.name}</span>`
+                    : `<a class="has-text-danger has-text-underline has-text-weight-bold entry-missing">${entry.name}</a>` %>
+                </td>
+                <td><%- entry.votes %></td>
+                <td><%- `${entry.percent}%` %></td>
+                <td><progress class="progress is-small is-info" value="<%- entry.percent %>" max="100"></progress></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<div class="column is-6">
+    <table class="table is-fullwidth is-hoverable has-text-centered">
+        <thead class="is-size-7">
+            <tr>
+                <th class="has-text-left" colspan="5">Database data:</th>
+            </tr>
+            <tr>
+                <th style="width: 25%;">Name</th>
+                <th style="width: 25%;">Votes</th>
+                <th style="width: 25%;">Points</th>
+                <th style="width: 25%;">Percent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% players.forEach(player => { %>
+            <tr class="is-size-7">
+                <td><%- player.name %></td>
+                <td><%- player.votes %></td>
+                <td><%- player.points %></td>
+                <td><%- player.percent %>%</td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>

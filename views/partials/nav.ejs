@@ -1,0 +1,40 @@
+<nav class="navbar is-unselectable is-dark" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img class="" src="/assets/img/favicon.png">
+                <span class="ml-1">r/barca POTM</span>
+            </a>
+            <a class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="/matches" class="navbar-link">Matches</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/matches/edit">Add New</a>
+                        <a class="navbar-item" href="/matches/list">List</a>
+                    </div>
+                </div>
+                <a href="/ratings" class="navbar-item">Ratings</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="/players" class="navbar-link">Players</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#">Add New</a>
+                        <a class="navbar-item" href="/players">List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<script type="text/javascript">
+    document.querySelector('.navbar-burger').addEventListener('click', () => {
+        document.querySelector('.navbar-burger').classList.toggle('is-active');
+        document.querySelector('.navbar-menu').classList.toggle('is-active');
+    });
+</script>

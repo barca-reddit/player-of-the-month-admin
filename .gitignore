@@ -1,0 +1,4 @@
+node_modules/
+.vscode/
+process.env
+TODO.md

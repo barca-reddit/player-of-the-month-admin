@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- await include('partials/head', { title: 'Error - Player of the month admin' }); %>
+</head>
+
+<body>
+    <section class="hero is-fullheight is-light is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column is-full">
+                        <h1 class="title">Error</h1>
+                    </div>
+                    <div class="column">
+                        <div class="field is-grouped is-align-items-center">
+                            <span class="is-size-4 mr-4"><%= error.message %></span>
+                            <a class="button is-small error-go-back" href="#">Go back</a>
+                        </div>
+                    </div>
+                    <div class="column is-full">
+                        <pre><%- error.stack %></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        document.querySelector('.error-go-back').addEventListener('click', () => {
+            window.history.back();
+        });
+    </script>
+</body>
+
+</html>

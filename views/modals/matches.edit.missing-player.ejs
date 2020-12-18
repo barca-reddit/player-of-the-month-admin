@@ -1,0 +1,31 @@
+<div class="modal-background"></div>
+<div class="modal-card">
+    <header class="modal-card-head">
+        <p class="modal-card-title is-size-7">Select a player from the list that matches with <span
+                  class="has-text-link has-text-underline has-text-weight-bold"><%- missing.name %></span>.</label></p>
+        <button class="delete modal-delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+        <div class="field is-horizontal is-align-items-center is-justify-content-space-between">
+            <div class="control mr-3">
+                <div class="select is-small">
+                    <select class="modal-player-select" required>
+                        <option value="">Select a player</option>
+                        <% players.forEach(player => { %>
+                        <option value="<%- player.player_id %>"><%- player.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+            </div>
+            <div class="checkbox-custom">
+                <input class="modal-player-database" type="checkbox" checked>
+                <span>Add entry to database</span>
+            </div>
+        </div>
+
+    </section>
+    <footer class="modal-card-foot">
+        <button class="button is-small is-success modal-save" modal-player-tag="<%- missing.name %>" disabled>Save Changes</button>
+        <button class="button is-small modal-cancel">Cancel</button>
+    </footer>
+</div>

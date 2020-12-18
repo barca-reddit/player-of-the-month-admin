@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- await include('partials/head', { title: 'Ratings - List - Player of the month admin' }); %>
+    <script src="/assets/js/ejs.js" defer></script>
+    <script src="/assets/js/core.js" defer></script>
+    <script src="/assets/js/ratings.js" defer></script>
+</head>
+
+<body>
+    <%- await include('partials/nav', { menu_active: 'matches' }); %>
+    <div class="section py-5">
+        <div class="container">
+            <%- await include('partials/breadcrumbs', { breadcrumbs: [{ name: 'Ratings', path: '/ratings'}]}); %>
+            <div class="columns is-multiline">
+                <div class="column is-12">
+                    <div class="tabs is-size-7">
+                        <ul>
+                            <li class="is-active" rating-type="current-month"><a>This Month</a></li>
+                            <li rating-type="all"><a>All ratings</a></li>
+                            <li rating-type="date-range"><a>By date range</a></li>
+                            <li class="loader-tab">
+                                <div style="width: 16px; height: 16px;" class="loader ml-3"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column is-12 is-flex is-align-items-flex-end p-0 date-controls">
+                    <div class="column is-5 is-flex-grow-1">
+                        <div class="field">
+                            <label class="label is-small">From:</label>
+                            <div class="control has-tooltip" tooltip-text="Date in CE(S)T time zone">
+                                <input class="date-start" type="date" pattern="\d{4}-\d{2}-\d{2}" title required disabled
+                                       autocomplete="off">
+                            </div>
+                            <!-- <p class="help is-success">This username is available</p> -->
+                        </div>
+                    </div>
+                    <div class="column is-5 is-flex-grow-1">
+                        <div class="field">
+                            <label class="label is-small">To:</label>
+                            <div class="control has-tooltip" tooltip-text="Date in CE(S)T time zone">
+                                <input class="date-end" type="date" pattern="\d{4}-\d{2}-\d{2}" title required disabled autocomplete="off">
+                            </div>
+                            <!-- <p class="help is-success">This username is available</p> -->
+                        </div>
+                    </div>
+                    <div class="column is-1">
+                        <div class="field is-grouped is-justify-content-flex-end">
+                            <div class="control">
+                                <button class="button is-link is-small ratings-search" disabled autocomplete="off">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-12 rating-table"></div>
+            </div>
+        </div>
+    </div>
+    <div class="is-flex-direction-column is-align-items-center toast" style="display: none; position: fixed; bottom: 3rem; width: 100%">
+    </div>
+    <div class="is-flex-grow-1"></div>
+    <div class="modal"></div>
+    <%- await include('partials/footer'); %>
+</body>
+
+</html>

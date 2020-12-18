@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- await include('partials/head', { title: 'Matches - Edit - Player of the month admin' }); %>
+    <script src="/assets/js/ejs.js" defer></script>
+    <script src="/assets/js/core.js" defer></script>
+    <script src="/assets/js/matches.edit.js" defer></script>
+</head>
+
+<body>
+    <%- await include('partials/nav', { menu_active: 'matches' }); %>
+    <div class="section py-5">
+        <div class="container">
+            <%- await include('partials/breadcrumbs', { breadcrumbs: [{ name: 'Matches' , path: '/matches' }, { name: 'Add New' , path: '/matches/edit' }]}); %>
+            <div class="columns is-multiline strawpoll-controls">
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Strawpoll id:</label>
+                        <div class="control has-tooltip" tooltip-text="Digits only">
+                            <input class="input is-small form-strawpoll-id" type="text" placeholder="123456789..." pattern="^[\d]+$"
+                                   mongo-key="id" name="id" autocomplete="off" title required />
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Reddit thread id:</label>
+                        <div class="control has-tooltip" tooltip-text="Alphanumeric only">
+                            <input class="input is-small form-reddit-id" type="text" placeholder="a1b2x3y4..." pattern="^[\w\d]+$"
+                                   mongo-key="thread" autocomplete="off" title required disabled />
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Competition:</label>
+                        <div class="control has-tooltip" tooltip-text="Enter the competition's name">
+                            <input class="input is-small form-competition" type="text" placeholder="League name"
+                                   pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="competition" autocomplete="off" title required disabled />
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Date:</label>
+                        <div class="control has-tooltip" tooltip-text="Date in CE(S)T time zone">
+                            <input type="date" pattern="\d{4}-\d{2}-\d{2}" mongo-key="timestamp" autocomplete="off" title required
+                                   disabled />
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Home team name:</label>
+                        <div class="control">
+                            <input class="input is-small form-home-team-name" type="text" placeholder="Team A"
+                                   pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="home_team_name" autocomplete="off" title required
+                                   disabled />
+                        </div>
+                        <!-- <p class=" help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Home team score:</label>
+                        <div class="control">
+                            <input class="input is-small form-home-team-score" type="text" placeholder="0" pattern="^[\d]{1,2}$"
+                                   mongo-key="home_team_score" autocomplete="off" title required disabled />
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Away team name:</label>
+                        <div class="control">
+                            <input class="input is-small form-away-team-name" type="text" placeholder="Team B"
+                                   pattern="^[\w\d\s\u00E0-\u00FC-]+$" mongo-key="away_team_name" autocomplete="off" title required
+                                   disabled />
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="field">
+                        <label class="label is-small">Away team score:</label>
+                        <div class="control">
+                            <input class="input is-small form-away-team-score" type="text" placeholder="0" pattern="^[\d]{1,2}$"
+                                   mongo-key="away_team_score" autocomplete="off" title required disabled />
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <div class="field is-grouped is-justify-content-flex-end">
+                        <div class="control">
+                            <button class="button is-text is-small strawpoll-reset">Reset</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-link is-small strawpoll-save" disabled autocomplete="off">Save</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-link is-small strawpoll-search" autocomplete="off">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns strawpoll-list"></div>
+        </div>
+    </div>
+    <div class="is-flex-grow-1"></div>
+    <div class="modal"></div>
+    <div class="is-flex-direction-column is-align-items-center toast" style="display: none; position: fixed; bottom: 3rem; width: 100%">
+    </div>
+    <%- await include('partials/footer'); %>
+</body>
+
+</html>

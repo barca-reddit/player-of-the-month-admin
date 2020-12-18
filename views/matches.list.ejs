@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- await include('partials/head', { title: 'Matches - List - Player of the month admin' }); %>
+    <script src="/assets/js/ejs.js" defer></script>
+    <script src="/assets/js/core.js" defer></script>
+    <script src="/assets/js/matches.list.js" defer></script>
+</head>
+
+<body>
+    <%- await include('partials/nav', { menu_active: 'matches' }); %>
+    <div class="section py-5">
+        <div class="container">
+            <%- await include('partials/breadcrumbs', { breadcrumbs: [{ name: 'Matches' , path: '/matches' }, { name: 'List' , path: '/matches/list' }]}); %>
+            <div class="columns is-multiline">
+                <div class="column is-12 match-tables">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="is-flex-direction-column is-align-items-center toast" style="display: none; position: fixed; bottom: 3rem; width: 100%">
+    </div>
+    <div class="is-flex-grow-1"></div>
+    <div class="modal"></div>
+    <%- await include('partials/footer'); %>
+</body>
+
+</html>
