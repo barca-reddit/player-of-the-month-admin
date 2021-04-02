@@ -81,7 +81,7 @@ class _MatchList extends _Core {
         }
 
         if (!this.is_rendering) {
-            const match = this.data.matches.find(match => match.id === parseInt(id));
+            const match = this.data.matches.find(match => match.id === id);
             document.querySelector('.toast').innerHTML = ejs.render(
                 this.toast,
                 {
@@ -101,24 +101,24 @@ class _MatchList extends _Core {
             }
             else if (classList.contains('match-edit')) {
                 await MatchList.renderModal(
-                    this.data.matches.find(match => match.id === parseInt(event.target.closest('tr').getAttribute('match-id')))
+                    this.data.matches.find(match => match.id === event.target.closest('tr').getAttribute('match-id'))
                 );
                 MatchList.toggleModal();
             }
             else if (classList.contains('match-ratings')) {
                 const parent = event.target.closest('tr');
                 if (parent.getAttribute('has-ratings') === 'true') {
-                    MatchList.toggleRatings(parseInt(parent.getAttribute('match-id')));
+                    MatchList.toggleRatings(parent.getAttribute('match-id'));
                 }
                 else {
                     const request = await MatchList.fetch('/ajax/ratings/match', {
                         method: 'POST',
-                        body: JSON.stringify({ id: parseInt(parent.getAttribute('match-id')) })
+                        body: JSON.stringify({ id: parent.getAttribute('match-id') })
                     });
                     const result = await request.json();
                     parent.setAttribute('has-ratings', 'true');
                     await MatchList.renderRatings(result);
-                    MatchList.toggleRatings(parseInt(parent.getAttribute('match-id')));
+                    MatchList.toggleRatings(parent.getAttribute('match-id'));
                 }
             }
             else if (classList.contains('toast-delete')) {

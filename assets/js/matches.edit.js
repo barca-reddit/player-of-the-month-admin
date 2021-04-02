@@ -139,7 +139,7 @@ class _MatchEditor extends _Core {
             };
 
             this.classList.add('is-loading');
-            await MatchEditor.getDb(parent.value);
+            await MatchEditor.getDb(MatchEditor.extractId(parent.value));
             await MatchEditor.getPoll(parent.value);
             MatchEditor.processData();
             MatchEditor.data.players = new _PointSystem(MatchEditor.data.players).distribute();

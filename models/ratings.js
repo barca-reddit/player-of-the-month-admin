@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const RatingSchema = new Schema(
     {
         _id: { type: Schema.Types.ObjectId, auto: true },
-        // match_id: { type: Schema.Types.ObjectId, required: true, ref: 'matches' },
-        match_id: { type: Number, required: true },
+        match_id: { type: String, required: true },
         player_id: { type: Schema.Types.ObjectId, required: true },
         votes: { type: Number, required: true },
         points: { type: Number, required: true },

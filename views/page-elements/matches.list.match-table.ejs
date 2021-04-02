@@ -29,7 +29,8 @@
                      style="width: 20px; height: 20px; min-width: 20px; min-height: 20px;">
             </td>
             <td>
-                <a href="https://www.strawpoll.me/<%- match.id %>/r" target="_blank"><span><%- match.id %></span></a>
+                <a href="https://www.strawpoll<%- /[^0-9]/.test(match.id) ? `.com/${match.id}/r` : `.me/${match.id}/r` %>"
+                   target="_blank"><span><%- match.id %></span></a>
             </td>
             <td>
                 <span><%- new Date(match.timestamp).toLocaleString('en-GB', { timeZone: 'Europe/Madrid', year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }); %></span>

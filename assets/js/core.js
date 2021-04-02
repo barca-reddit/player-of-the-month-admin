@@ -30,9 +30,17 @@ class _Core {
         return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), 12, 0, 0)).getTime();
     }
 
+    extractId(url) {
+        try {
+            return new URL(url).pathname.replace(/\/$/, '').split('/').pop();
+        } catch (error) {
+            return url;
+        }
+    }
+
     processMatch() {
         this.data.match = {
-            id: parseInt(document.querySelector('[mongo-key="id"]').value),
+            id: this.extractId(document.querySelector('[mongo-key="id"]').value),
             timestamp: this.processDate(new Date(document.querySelector('[mongo-key="timestamp"]').value)),
             home_team_score: parseInt(document.querySelector('[mongo-key="home_team_score"]').value),
             away_team_score: parseInt(document.querySelector('[mongo-key="away_team_score"]').value),

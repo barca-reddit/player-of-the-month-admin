@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const MatchSchema = new Schema(
     {
         _id: { type: Schema.Types.ObjectId, auto: true },
-        id: { type: Number, required: true, index: true, unique: true },
+        id: { type: String, required: true, index: true, unique: true },
         timestamp: { type: Number, required: true },
         competition: { type: String, required: true },
         thread: { type: String, required: true },
